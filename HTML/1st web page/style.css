@@ -1,0 +1,903 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(Bg.jpg);
+    /* background: #162938; */
+    background-size: cover;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    position: relative;
+    font-size:  2em;
+    color: #ffffff;
+    user-select: none;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+
+}
+.main{
+    display: flex;
+    align-items: center;
+    color:#fff;
+    transition: all 0.5s ease;
+}
+.btn-login{
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    margin-right: 25px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    outline: none;
+    border-radius: 24px;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    top: 10px;
+    right: 20px;
+    transition: 0.5s;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+}
+.btn-login:hover{
+    background:#fff;
+    color: #162938;
+}
+.btn-login.press{
+    animation: slideRemove 1s ease forwards;
+}
+
+.navigation a{
+    display: inline-block;
+    position: relative;
+    font-size: 1.1em;
+    color:#ffffff;
+    font-weight:  500;
+    justify-content: center;
+    margin-left:  40px;
+    left: -150px;
+    margin-right: 80px;
+    text-decoration: none;
+    opacity: 0;
+    animation: slideTop 0.3s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+}
+
+.navigation a::after{
+    
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scalex(0);
+    transform-origin: right;
+    transition: transform 0.6s;
+}
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+#menu-icon{
+    position: absolute;
+    color: white;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+@media (max-width: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navigation a{
+        padding:  5px 0;
+        margin:  0px 20px;
+    }
+}
+
+@media (max-width: 900px){
+    #menu-icon{
+        position: absolute;
+        margin-top: 0px;
+        margin-right: -20px;
+        display: block;
+    }
+    .navigation{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 250px;
+        background: rgba(56, 56, 56, 0.288);
+        border: 2px solid rgba(225,225,225,5);
+        border-radius: 24px;
+        backdrop-filter: blur(50px);
+        box-shadow: 0 0 30px rgba(0,0,0,5);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 24px;
+        transition: all 0.5s ease;
+        
+    } 
+    
+    
+    .navigation.open{
+        right: 2%;
+        
+    }
+    .navigation a.home{
+        position: relative;
+        top: 20px;
+        display: none;
+        margin-left: 250px;
+        transition: all 0.5s ease;
+    }
+
+    .navigation a.about{
+        position: relative;
+        top: 20px;
+        margin-left: 250px;
+        transition: all 0.5s ease;
+    }
+
+    .navigation a.Services{
+        position: relative;
+        top: 80px;
+        margin-left: 250px;
+        transition: all 0.5s ease;
+    }
+    
+    .navigation a.Contact{
+        position: relative;
+        top: 140px;
+        margin-left: 250px;
+        transition: all 0.5s ease;
+    }
+   
+    .btn-login{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -20px;
+        right: 20px;
+       
+    }
+  .wrapper2 .form-box.Contact.Contact p{
+        display: none;
+    }
+    .wrapper2.active-popup .form-box.Contact.Contact h1{
+        margin-top:240px;
+        font-size: 25px;
+    }
+    .wrapper2 .form-box.Contact.Contact h3:nth-of-type(2){
+        font-size: 8px;
+        font-weight: 300;
+    }
+   .wrapper2 .form-box.Contact h2{
+        font-size: 5px;
+   }
+   .wrapper2 .profile img{
+/*      display: none; */
+     position: absolute;
+     height: 100px;
+   }
+   .wrapper2 .form-box.Contact h2{
+    font-size: 1em;
+     top: 0;
+   }
+    
+}
+
+
+
+
+/* -----------------------Login and sign in option------------------------ */
+.wrapper{
+    position: absolute;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,5);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease , height .2s ease;
+}
+
+
+.wrapper .icon-close1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162938;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+/* ------------------------------------------------------------------------ */
+
+
+/* ------------------------Contact section--------------------------------- */
+.wrapper2{
+    position: absolute;
+    top: 100px;
+    width: 90%;
+    height: 650px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,5);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease , height .2s ease;
+}
+.wrapper2 .icon-close2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162938;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper2.active-popup{
+    transform: scale(1);
+}
+.wrapper2 .form-box.Contact{
+    /* display: none; */
+    position: absolute;
+    transition: none;
+    transform: translateY(0);
+}
+
+
+.wrapper2 .form-box.Contact h2{
+    /* Contacts */
+    position: relative;
+    color: #162938;
+    /* margin-bottom: 100px; */
+    /* top: 30px; */
+    font-size: 4em;
+    text-align: center;
+}
+
+
+.wrapper2 .form-box.Contact.Contact h3{
+    /* Hey It's me & I'm a */
+    font-size: 25px;
+    font-weight: 300;   
+    transition: transform .8s ease;
+    transform: translateY(-400px);
+}
+.wrapper2.active-popup .form-box.Contact.Contact h3{
+    transform: translateY(0);
+}
+.wrapper2 .form-box.Contact.Contact h1{   
+    /* Pamod Madubashana */
+    font-size: 40px;
+    font-weight: 700;   
+    margin: -3px 0; 
+    margin-right: 300px;
+    transition: transform 1s ease;
+    transform: translateX(-400px);
+}
+.wrapper2.active-popup .form-box.Contact.Contact h1{
+    transform: translateX(0);
+}
+.wrapper2 .form-box.Contact.Contact h3 span{
+    color: rgb(255, 255, 255);
+
+}
+.wrapper2 .form-box.Contact.Contact h3:nth-of-type(2) {
+    /* It's me */
+    font-size: 20px;
+    transition: transform .8s ease;
+    transform: translateY(400px);
+    
+}
+.wrapper2.active-popup .form-box.Contact.Contact h3:nth-of-type(2){
+    transform: translateY(0);
+}
+.wrapper2 .form-box.Contact.Contact p{
+    margin-top: 20px;
+    font-size: 16px;
+    margin-right: 300px;
+    color: rgb(179, 201, 221);
+    transition: transform 1.5s ease;
+    transform: translateX(400px);
+}
+.wrapper2.active-popup .form-box.Contact.Contact p{
+    transform: translateX(0px);
+}
+.wrapper2 .profile img{
+    position: absolute;
+    height: 400px;
+    right: 0;
+    top: 10%;
+    transition: transform .8s ease;
+    transform: translateX(400px);
+}
+.wrapper2.active-popup .profile img{
+    transform: translateX(0);
+}
+
+
+.wrapper2 .sm a{
+    position: absolute;
+    margin: 30px 15px 30px 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:  40px;
+    height: 40px;
+    background: transparent;
+    border: 0px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    font-size: 30px;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+
+.wrapper2 .sm a .whatsapp{
+    color: #fffefe;
+    display: none;
+    text-decoration: none;
+    width:  40px;
+    height: 40px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    transition: 0.25s ease;
+    transition: transform .7s ease;
+    transform: translateY(400px);
+}
+.wrapper2.active-popup .sm a .whatsapp{
+    transform: translateY(5px);
+    transform: translateX(60px);
+}
+.wrapper2 .sm a .whatsapp:hover{
+    background: #05af0e;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #14a01b;
+}
+
+
+.wrapper2 .sm a .youtube{
+    color: #fffefe;
+    display: none;
+    text-decoration: none;
+    width:  40px;
+    height: 40px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    transition: 0.25s ease;
+    transition: transform .7s ease;
+    transform: translateY(400px);
+}
+.wrapper2.active-popup .sm a .youtube{
+    transform: translateY(5px);
+    transform: translateX(120px);
+}
+.wrapper2 .sm a .youtube:hover{
+    background: #ffffff;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #ffffff;
+}
+.wrapper2 .sm a .youtube img:hover{
+    filter: invert(48%) sepia(81%) saturate(5310%) hue-rotate(348deg) brightness(99%) contrast(89%);
+}
+
+
+
+.wrapper2 .sm a .telegram{
+    color: #fffefe;
+    display: none;
+    text-decoration: none;
+    width:  40px;
+    height: 40px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    transition: 0.25s ease;
+    transition: transform .7s ease;
+    transform: translateY(400px);
+}
+.wrapper2.active-popup .sm a .telegram{
+    transform: translateY(5px);
+    transform: translateX(180px);
+}
+.wrapper2 .sm a .telegram:hover{
+    background: #3e8ee9;
+    /* display: none; */
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #0f6dda;
+}
+
+.wrapper2 .sm a .github{
+    color: #fffefe;
+    display: none;
+    text-decoration: none;
+    width:  40px;
+    height: 40px;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    transition: 0.25s ease;
+    transition: transform .7s ease;
+    transform: translateY(400px);
+}
+.wrapper2.active-popup .sm a .github{
+    transform: translateY(5px);
+    transform: translateX(240px);
+}
+.wrapper2 .sm a .github:hover{
+    background: #000000;
+    /* display: none; */
+    filter:invert(1);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #000000;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------services section-------------------------- */
+.wrapper3{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,5);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,5);
+    display:flex;
+    /* justify-content: center;
+    align-items: center; */
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease , height .2s ease;
+}
+.wrapper3 .icon-close3{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162938;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper3.active-popup{
+    transform: scale(1);
+}
+.wrapper3 .form-box.home h2{
+    position: relative;
+    color: #162938;
+    top: -150px;
+    font-size: 4em;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------About section----------------------------- */
+.wrapper4{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,5);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease , height .2s ease;
+}
+.wrapper4 .icon-close4{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162938;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper4.active-popup{
+    transform: scale(1);
+}
+.wrapper4 .form-box.about h2{
+    position: absolute;
+    color: #162938;
+    font-size: 2em;
+    top: 20px;
+    left: 150px;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------Home Page--------------------------------- */
+.wrapper5{
+    position: absolute;
+    width: 90%;
+    height: 90%;;
+    top: 100px;
+    background: transparent;
+    border: 0px solid rgba(225,225,225,5);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,5);
+    display:flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform .5s ease , height .2s ease;
+}
+.wrapper5 .icon-close4{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5em;
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #162938;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper5.active-popup{
+    transform: scale(0);
+}
+.wrapper5 .form-box.home h2{
+    position: relative;
+    color: #162938;
+    top: -0%;
+    font-size: 4em;
+    text-align: center;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ----------------------------Regiter box--------------------------------- */
+.wrapper.ac1{
+    height: 520px;
+}
+/* ------------------------------------------------------------------------ */
+
+/* -------------------------Account Recovery box--------------------------- */
+.wrapper.ac2{
+    height: 380px;
+}
+/* ------------------------------------------------------------------------ */
+
+/* ----------------------------Regiter box--------------------------------- */
+.wrapper.ac3{
+    height: 520px;
+}
+/* ------------------------------------------------------------------------ */
+
+
+.form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+
+
+
+/* -------------------------------Login interface-------------------------- */
+
+.wrapper .form-box.login{
+    /* display: none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper.ac1 .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.ac2 .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.ac4 .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ---------------------------Register Interface--------------------------- */
+.wrapper .form-box.Register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper.ac1 .form-box.Register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper.ac3 .form-box.Register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+/*Forget password */
+.wrapper .form-box.fpw{
+    position: absolute;
+    transition: none;
+    transform: translateY(-400px);
+}
+.wrapper.ac2 .form-box.fpw{
+    transition: transform .18s ease;
+    transform: translateY(0);
+}
+.wrapper.ac3 .form-box.fpw{
+    transition: transform .18s ease;
+    transform: translateX(-400px);
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+/* --------------------------- Topics ------------------------------------- */
+
+.form-box h2{
+    font-size: 2em;
+    color: #000000;
+    text-align: center;
+    cursor: default;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color:#162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.3s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}  
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color:#162938;
+    font-weight: 800;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+
+}
+
+.remeber-pw{
+    font-size: 0.9em;
+    color: #162938;
+    font-weight: 800;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.remeber-pw label input{
+    accent-color: #162938;
+    margin-right: 7px;
+}
+.remeber-pw a{
+    color: #162938;
+    text-decoration: none;
+}
+.remeber-pw a:hover{
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ---------------------------------Buttons-------------------------------- */
+.btn{
+    width:  100%;
+    height: 45px;
+    background:#162938;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    color:#fff;
+    font-weight: 500;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+.login-reg{
+    font-size: 0.9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-reg p a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-reg p a:hover{
+    text-decoration: underline;
+}
+
+.rqt p {
+    color: #162938;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact p{
+    color: #fff;
+}
+
+@keyframes slideRight{
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+}
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideTop{
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+}
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom{
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+}
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft{
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+}
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideRemove{
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+}
+    100% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+}
