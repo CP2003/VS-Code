@@ -1,0 +1,61 @@
+<html>
+   <head>
+   <link rel="stylesheet" href="style.css">
+       <title>Calculater Page</title>
+   </head>
+   <body scroll="no" style="overflow: hidden">
+      <div class="banner">
+		  <div class="logo">
+	           <h1><a href="index.html">Calculater</a></h1>
+		     <ul>
+		       <h2><a href="https://www.facebook.com/pamod.madubashana.48/">By P A M O D </a></h2>
+		     </ul>
+	       </div>
+	  </div>
+	  
+	  	
+   </body>
+        
+      <form name="form1" class="cal" action="index.html" method="post">
+	    
+		
+	     <input type="text" name="answer" id="display" placeholder="Calculater Page       " style="text-align:right;" readonly>
+		 
+		 <br>
+		 
+		 <input type="button" class="button" value="C" onclick="form1.answer.value=''"> 
+		 <input type="button" class="button" value="←" onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)"> 
+		 <input type="button" class="button" value="00" onclick="form1.answer.value+='00'"> 
+		 <input type="button" class="opt" value="/" onclick="form1.answer.value+='/'">
+		<br>
+		</br>
+		
+		 <input type="button" class="button" value="7" onclick="form1.answer.value+='7'"> 
+		 <input type="button" class="button" value="8" onclick="form1.answer.value+='8'"> 
+		 <input type="button" class="button" value="9" onclick="form1.answer.value+='9'"> 
+		 <input type="button" class="opt" value="x" onclick="form1.answer.value+='*'"> 
+		 <br>
+		 </br>
+		 
+		 <input type="button" class="button" value="4" onclick="form1.answer.value+='4'"> 
+		 <input type="button" class="button" value="5" onclick="form1.answer.value+='5'"> 
+		 <input type="button" class="button" value="6" onclick="form1.answer.value+='6'"> 
+		 <input type="button" class="opt" value="-" onclick="form1.answer.value+='-'"> 
+		 <br>
+		 </br>
+		 
+		 <input type="button" class="button" value="1" onclick="form1.answer.value+='1'"> 
+		 <input type="button" class="button" value="2" onclick="form1.answer.value+='2'"> 
+		 <input type="button" class="button" value="3" onclick="form1.answer.value+='3'"> 
+		 <input type="button" class="opt" value="+" onclick="form1.answer.value+='+'"> 
+		 <br>
+		 </br>
+		 
+		 <input type="button" class="zero" value="0" onclick="form1.answer.value+='0'"> 
+		 <input type="button" class="button" value="." onclick="form1.answer.value+='.'"> 
+		 <input type="button" class="opt" value="=" onclick="form1.answer.value=eval(form1.answer.value)"> 
+		<br>
+		</br>
+      </form>  
+	</body>
+</html>
