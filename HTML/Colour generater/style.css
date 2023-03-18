@@ -1,0 +1,212 @@
+@import '@simonwep/pickr/dist/themes/monolith.min.css'; 
+
+body{
+    min-height: 100vh;
+    background: #162938;
+}
+.color-picker-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #1f1f1f; */
+  }
+.pixel {
+    display: none;
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    left: 45%;
+    width: 300px;
+    height: 150px;
+    z-index: -1;
+    
+}
+h1{
+    color:white;
+    position: absolute;
+    left: 220px;
+    top: 30px;
+}
+h3{
+    color: white;
+    position: absolute;
+    left: 310px;
+    top: 80px;
+}
+h3:hover{
+    color: #0683ff;
+    cursor: default;
+}
+
+.box{
+    /* display: none; */
+    position: relative;
+    left:20px;
+    align-items: center;
+}
+
+.realPixel{
+    position: absolute;
+    top:121px;
+    left: 200px;
+    width: 180px;
+    height: 130px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    overflow: hidden;
+}
+
+.realPixel form{
+    position: absolute;
+    inset: 4px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #000;
+    background: #162938;
+    box-shadow: 0 0 6px #000000;
+    width: 168px;
+    height: 118px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 1;
+} 
+.realPixel::before{
+    content: '';
+    position: absolute;
+    top:20px;
+    left: -60px;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: -1; 
+    transform-origin: bottom right;
+    animation: animate 2s linear infinite
+}
+.realPixel::after{
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(0deg,#45f3ff,#45f3ff,#45f3ff,transparent,transparent);
+    z-index: -1; 
+    transform-origin: top left;
+    animation: animate 2s linear infinite
+}
+
+
+.box .target{
+    position: absolute;
+    display: block;
+    text-align: center;
+    border: 0px solid #00000000;
+    color: white;
+    background: #162938;
+    width: 106px;
+    height: 30px;
+    top: 160px;
+    left: 240px;
+    outline: none;
+    border-radius: 5px;
+    z-index: 1;
+    transition: 0.25s;
+}
+.box .target:focus{
+    
+    border-color: #c54245;
+    box-shadow: 0 0 6px #0683ff;
+
+}
+.box .target:hover{
+    box-shadow: 0 0 6px #000000;
+}
+.box .execute{
+    position: absolute;
+    top: 120px;
+    left: 390px;
+    width: 100px;
+    height: 60px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    border-top-right-radius: 20px;
+    background: none;
+    color: white;
+    z-index: 10;
+}
+.box .execute:hover{
+    color:#ffffff;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #000000;
+}
+
+.box .click{
+    position: absolute;
+    top: 190px;
+    left: 390px;
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    border-bottom-right-radius: 20px;
+    background: none;
+    color: white;
+    border: 3px solid #000;
+    z-index: 10;
+    
+}
+.box .click:hover{
+    color:#ffffff;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #000000;
+}
+
+.glyphicon.glyphicon-refresh{
+    top: 110px;  
+    left: 20px
+}
+.btn.btn-info.btn-lg{
+    top: -100px
+}
+.filterDetail {
+    display: none;
+    font-family: "Consolas", "Menlo", "Ubuntu Mono", monospace;
+}
+.lossDetail{
+    display: none;
+}
+.filterPixel{
+    display: none;
+}
+p.f{
+    display: none;
+
+}
+p.r{
+    display: none;
+}
+
+  
+#color-picker-input {
+    position: absolute;
+    top: 90px;
+    left: 520px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #162938;
+  }
+
+
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
