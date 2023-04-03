@@ -1,0 +1,17 @@
+body {
+  background-color: #000;    
+  margin: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.name{
+  color:white;
+  position: absolute;
+}
+p{
+  position: absolute;
+  color: white;
+  top: 100px;
+  left: 100px;
+  
+}
