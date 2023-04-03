@@ -1,0 +1,244 @@
+body{
+  background-color: rgb(27, 27, 27);
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.background{
+ position: absolute;
+ height: 100%;
+ width: 800%;
+ background: radial-gradient(circle at 20% 107%, #003e46 5%, #1b3a4d 45%,rgb(13, 63, 43) 60%, #192344 90%);
+ /* background-position: 100px 50px; */
+ background-size: cover;
+ animation: anim 20s infinite ease-in-out;
+}
+/* @keyframes anim{
+  0%{
+    background-position: 1000px 50px;
+  }
+  50%{
+    background-position: 10000px 50px;
+  }
+  100%{
+    background-position: 100000px 50px;
+  }
+} */
+
+
+
+@keyframes anim{
+  0%{left: -700%}
+  25%{left: -350%}
+  50%{left: 0%}
+  75%{left: -350%}
+  100%{left: -700%}
+}
+
+.apps{
+  position: fixed;
+  top: 5%;
+  left:5%;
+  width: 400px;
+  height: 150px;
+  background: transparent;
+  border: 2px solid rgba(225,225,225,5);
+  border-radius: 24px;
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 30px rgba(0,0,0,5);
+  display:flex;
+  overflow: hidden;
+}
+
+.facebook{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 10px;
+  background-color: #4267b2;
+  border-radius: 24px;
+  transition: translate 0.5s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.facebook:hover{
+  translate: 5px -15px;
+  box-shadow: 0px 4px rgba(217, 220, 242, 0.750),
+              0px 8px rgba(44, 216, 225, 0.500), 
+              0px 12px rgba(126, 255, 178, 0.250);
+}
+.facebook::after{
+  position: absolute;
+  content: '';
+  width: 60px;
+  left: 20px;
+  height: 110px;
+  border-right: 20px solid #4267b2;
+  border-radius: 24px;
+}
+.facebook span{
+  position: absolute;
+}
+.facebook span.vertical{
+  background-color: #4267b2;
+  width: 28px;
+  height: 98px;
+  border: 15px solid white;
+  top: 16px;
+  left: 50px;
+  border-radius: 25px;
+}
+.facebook span.horizontal{
+  background-color: white;
+  width: 53px;
+  height: 15px;
+  top: 50px;
+  left: 37px;
+  
+}
+.facebook span.diagonal{
+  background-color: #4267b2;
+  width: 20px;
+  height: 20px;
+  top: 51px;
+  left: 77px;
+  z-index: 1;
+  transform: rotate(-82deg);
+}
+
+.instergram{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 120px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d62 60%, #285aeb 90%);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  transition: translate 0.5s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.instergram:hover{
+  translate: 5px -15px;
+  box-shadow: 0px 4px rgba(217, 220, 242, 0.750),
+              0px 8px rgba(44, 216, 225, 0.500), 
+              0px 12px rgba(126, 255, 178, 0.250);
+}
+.instergram .inner{
+  width: 70px;
+  height: 70px;
+  top: 8px;
+  left: 7px;
+  border: 8px solid white;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+.instergram .inner::before{
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 7px solid white;
+  border-radius: 50%;
+  background: transparent;
+  position: absolute;
+}
+.instergram .inner::after{
+  content: '';
+  width: 5px;
+  height: 5px;
+  border: 2px solid white;
+  top: 8px;
+  right: 8px;
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+}
+
+.whatsapp{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: 230px;
+  background-color: #5fd172;
+  border-radius: 24px;
+  transition: translate 0.5s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.whatsapp:hover{
+  translate: 5px -15px;
+  box-shadow: 0px 4px rgba(217, 220, 242, 0.750),
+              0px 8px rgba(44, 216, 225, 0.500), 
+              0px 12px rgba(126, 255, 178, 0.250);
+}
+.whatsapp .circle{
+  position: absolute;
+  height: 55px;
+  width: 55px;
+  top: 12px;
+  left: 16px;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  background: #5fd17200;
+  place-items: center;
+  z-index: 1;
+}
+.whatsapp .triangle{
+  position: absolute;
+  background: #5fd172;
+  width: 8px;
+  height: 8px;
+  border-bottom: 6px solid #fff;
+  border-left: 8px solid #fff;
+  transform: rotate(-20deg) skew(-28deg);
+  top: 62px;
+  left: 18px;
+  z-index: 1;
+ }
+ .whatsapp .phone{
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  border: 7px solid #fff;
+  transform: translate(-50%, -50%) rotate( -45deg);
+  border-radius: 50%;
+  top: 47px;
+  left: 52px;
+}
+.whatsapp .phone div{
+  position: absolute;
+  top: 12px;
+  left: 7px;
+  width: 30px;
+  height: 58px;
+  background: #5fd172;
+  transform: translateY(-50%);
+  border-radius:  0 64px 64px 0;
+  z-index: 1;
+}
+.whatsapp .phone::before , .whatsapp .phone::after{
+  content: '';
+  position: absolute;
+  left: 8px;
+  width: 8px;
+  height: 12px;
+  background: #fff;
+  z-index: 3;
+}
+.whatsapp .phone::after{
+  top: 25px;
+  left: 3px;
+  border-radius: 3px 3px 6px 50%;
+  transform: rotate(-15deg);
+}
+.whatsapp .phone::before{
+  top: -7px;
+  left: 3px;
+  border-radius: 50% 6px 3px 3px;
+  transform: rotate(15deg);
+}
+
+

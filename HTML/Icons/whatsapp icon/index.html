@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whatsapp icon</title>
+  
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+     body{
+      background: #333;
+     }
+     .whatsapp{
+      position: relative;
+      background: #5fd172;
+      width: 18em;
+      height: 18em;
+      top: 250px;
+      left: 40%;
+      place-items: center;
+      border-radius: 50%;
+      border: 25px solid #fff;
+      box-shadow: -4px 4px 8px #7d7d7d;
+      z-index: 1;
+     }
+     .triangle{
+      position: absolute;
+      background: #5fd172;
+      width: 4em;
+      height: 4em;
+      border-bottom: 21px solid #fff;
+      border-left: 21px solid #fff;
+      transform: rotate(-20deg) skew(-20deg);
+      box-shadow: -6px 6px 6px #9c9c9c;
+      bottom: -1.5em;
+      left: 0.5em;
+      z-index: 1;
+     }
+     .phone{
+      position: absolute;
+      width: 7em;
+      height: 10em;
+      border: 30px solid #fff;
+      transform: translate(-50%, -50%) rotate( -45deg);
+      border-radius: 50%;
+      top: 43%;
+      left: 55%;
+    }
+    .phone div{
+      position: absolute;
+      top: 50%;
+      right: -2em;
+      width: 7.5em;
+      height: 15em;
+      background: #5fd172;
+      transform: translateY(-50%);
+      border-radius:  0 4em 4em 0;
+      z-index: 1;
+
+    }
+    .phone::before, .phone::after{
+      content: '';
+      position: absolute;
+      left: 0.6em;
+      width: 2.5em;
+      height: 3.5em;
+      background: #fff;
+      z-index: 3;
+    }
+    .phone::before{
+      top: 8.06em;
+      border-radius: 5px 5px 10px 50%;
+      transform: rotate(-15deg);
+    }
+    .phone::after{
+      bottom: 8.06em;
+      border-radius: 50% 10px 5px 5px;
+      transform: rotate(15deg);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="whatsapp">
+    <div class="triangle"></div>
+    <div class="phone">
+        <div></div>
+    </div>
+  </div>
+</body>
+</html>

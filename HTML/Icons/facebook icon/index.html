@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook icon</title>
+
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(46, 46, 46);
+    }
+    #logo{
+      position: relative;
+      width: 255px;
+      height: 300px;
+      background-color: #4267b2;
+      border-right: 45px solid #4267b2;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 50px;
+    }
+    #logo span{
+      position: absolute;
+    }
+    #logo span.vertical{
+      background-color: #4267b2;
+      width: 28%;
+      height: 98%;
+      border: 45px solid white;
+      bottom: -126px;
+      right: -70px;
+      border-radius: 60px;
+    }
+    #logo span.horizontal{
+      background-color: white;
+      width: 130px;
+      height: 45px;
+      top: 139px;
+      right: 3px;
+    }
+    #logo span.diagonal{
+      background-color: #4267b2;
+      width: 50px;
+      height: 50px;
+      top: 140px;
+      right: -43px;
+      z-index: 1;
+      transform: rotate(-82deg);
+      
+    }
+  </style>
+
+</head>
+<body>
+  <div id="logo">
+    <span class="vertical"></span>
+    <span class="horizontal"></span>
+    <span class="diagonal"></span>
+  </div>
+</body>
+</html>

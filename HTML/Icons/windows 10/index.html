@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(27, 27, 27);
+    }
+    .windows{
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .window1{
+      position: absolute;
+      background-color: #05ADE8;
+      width: 80px;
+      height: 80px;
+      top: 0;
+      left: 0;
+      border: 25px solid transparent;
+    }
+    .window1::before{
+      position: absolute;
+      content: '';
+      height: 110px;
+      width: 128px;
+      top: -37px;
+      left: -24px;
+      background-color: #05ace8;
+      transform: skew(-10deg) rotate(-10deg);
+    }
+    .window2{
+      position: absolute;
+      background-color: #05ADE8;
+      width: 130px;
+      height: 105px;
+      top: -25px;
+      right: 25px;
+      border: 25px solid transparent;
+      /* display: none; */
+    }
+    .window2::before{
+      position: absolute;
+      content: '';
+      background-color: #05ace8;
+      width: 178px;
+      height: 150px;
+      top: -40px;
+      left: -24px;
+      transform: skewX(-10deg) rotate(-10deg);
+    }
+    .window3{
+      position: absolute;
+      background-color: #05ADE8;
+      width: 80px;
+      height: 80px;
+      bottom: 75px;
+      left: 0;
+      border: 25px solid transparent;
+      /* display: none; */
+    }
+    .window3::before{
+      position: absolute;
+      content: '';
+      height: 110px;
+      width: 128px;
+      top: 9px;
+      left: -24px;
+      background-color: #05ace8;
+      transform: skew(10deg) rotate(10deg);
+    }
+    .window4{
+      position: absolute;
+      background-color: #05ADE8;
+      width: 130px;
+      height: 105px;
+      bottom: 50px;
+      right: 25px;
+      border: 25px solid transparent;
+      /* display: none; */
+    }
+    .window4::before{
+      position: absolute;
+      content: '';
+      background-color: #05ace8;
+      width: 178px;
+      height: 150px;
+      top: -3px;
+      left: -24px;
+      transform: skewX(10deg) rotate(10deg);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="windows">
+    <div class="window1"></div>
+    <div class="window2"></div>
+    <div class="window3"></div>
+    <div class="window4"></div>
+  </div>
+</body>
+</html>
