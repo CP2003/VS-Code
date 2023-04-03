@@ -1,0 +1,245 @@
+@import '@simonwep/pickr/dist/themes/monolith.min.css'; 
+
+body{
+    min-height: 100vh;
+    background: #172835;
+    align-items: center;
+    justify-content: center;
+}
+.color-picker-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #1f1f1f; */
+  }
+  #hex-code{
+    position: absolute;
+    z-index: 6;
+    top: 800px;
+    color: white;
+}
+.pixel {
+    display: none;
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    left: 45%;
+    width: 300px;
+    height: 150px;
+    z-index: -1;
+    
+}
+
+h1{
+    color:white;
+    text-align: center;
+    top: 0;
+}
+h3{
+    color: white;
+    position: relative;
+    top: -20px;
+    text-align: center;
+}
+h3:hover{
+    color: #0683ff;
+    cursor: default;
+}
+
+.box{
+    /* display: none; */
+    position: relative;
+    left:20px;
+    align-items: center;
+}
+
+.realPixel{
+    position: absolute;
+    top:121px;
+    left: 140px;
+    width: 180px;
+    height: 130px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    overflow: hidden;
+}
+
+.realPixel form{
+    position: absolute;
+    inset: 4px;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid #000; */
+    background: #162938;
+    /* box-shadow: 0 0 6px #000000; */
+    left: 5px;
+    top: 5.5px;
+    width: 170px;
+    height: 118px;
+    border-radius: 5px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 1;
+} 
+.realPixel::before{
+    content: '';
+    position: absolute;
+    top:20px;
+    left: -60px;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: -1; 
+    transform-origin: bottom right;
+    animation: animate 2s linear infinite
+}
+.realPixel::after{
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 90px;
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(0deg,#45f3ff,#45f3ff,#45f3ff,transparent,transparent);
+    z-index: -1; 
+    transform-origin: top left;
+    animation: animate 2s linear infinite
+}
+
+
+.box .target{
+    position: absolute;
+    display: block;
+    text-align: center;
+    border: 0px solid #00000000;
+    color: white;
+    background-color: transparent;
+    width: 106px;
+    height: 30px;
+    top: 160px;
+    left: 180px;
+    outline: none;
+    border-radius: 5px;
+    z-index: 1;
+    transition: 0.25s;
+    /* box-shadow: 0 0 6px #000000; */
+}
+.box .target:focus{
+    
+    border-color: #c54245;
+    box-shadow: 0 0 6px #0683ff;
+
+}
+.box .target:hover{
+    box-shadow: 0 0 6px #000000;
+}
+.box .execute{
+    position: absolute;
+    top: 95px;
+    left: 265px;
+    width: 100px;
+    height: 60px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    border-top-right-radius: 20px;
+    background: none;
+    color: white;
+    z-index: 10;
+}
+.box .execute:hover{
+    color:#ffffff;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #000000;
+}
+
+.box .click{
+    position: absolute;
+    top: 160px;
+    left: 265px;
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    border-bottom-right-radius: 20px;
+    background: none;
+    /* filter: invert(); */
+    color: white;
+    border: 3px solid #000;
+    z-index: 5;
+    
+}
+.box .click:hover{
+    color:#ffffff;
+    border: 0px solid transparent;
+    box-shadow: 0 0 20px #000000;
+}
+#preview{
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    border-radius: 25px;
+    width: 450px;
+    height: 300px;
+    background-color: #203a4b36;
+    box-shadow: 0 0 20px #000000;
+    /* background-color: rgb(97, 79, 79); */
+    /* z-index: -5; */
+}
+#outline{
+    position: relative;
+    top: -26px;
+    border: 3px solid black;
+    box-shadow: 0 0 6px #000000;
+    border-radius: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    left: 83px;
+    width: 169px;
+    height: 115px;
+}
+.glyphicon.glyphicon-refresh{
+    top: 110px;  
+    left: 20px
+}
+.filterDetail {
+    display: none;
+    font-family: "Consolas", "Menlo", "Ubuntu Mono", monospace;
+}
+.lossDetail{
+    display: none;
+}
+.filterPixel{
+    display: none;
+}
+p.f{
+    display: none;
+
+}
+p.r{
+    display: none;
+}
+
+  
+#color-picker-input {
+    position: absolute;
+    top: 250px;
+    left: 440px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #162938;
+  }
+
+
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
