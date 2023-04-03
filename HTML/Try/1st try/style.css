@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: url(bg.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,5);
+    width: 80%;
+    border: 1px solid rgb(22, 22, 22);
+    border-radius: 24px;
+    height: 20px;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+}
+.navbar a{
+    display: inline-flex;
+    position: relative;
+    font-size: 1.1em;
+    color:#ffffff;
+    font-weight:  500;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 99999;
+}
+.Logo{
+    position: relative;
+    left: -90px;
+    color: #fff;
+    font-size: 30px;
+}
+a.Home{
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    height: 25px;
+    width: 60px;
+    border-radius: 10px;
+}
+a.Home:hover{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+    box-shadow: 0 0 20px #a4a3a3;
+}
+a.Home.active{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+}
+a.tab1{
+    position: absolute;
+    top: 20px;
+    left: 35%;
+    height: 25px;
+    width: 60px;
+    border-radius: 10px;
+}
+a.tab1:hover{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+    box-shadow: 0 0 20px #a4a3a3;
+}
+a.tab1.active{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+}
+
+a.tab2{
+    position: absolute;
+    top: 20px;
+    left: 55%;
+    height: 25px;
+    width: 60px;
+    border-radius: 10px;
+}
+a.tab2:hover{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+    box-shadow: 0 0 20px #a4a3a3;
+}
+a.tab2.active{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+}
+
+a.tab3{
+    position: absolute;
+    top: 20px;
+    left: 75%;
+    height: 25px;
+    width: 60px;
+    border-radius: 10px;
+}
+a.tab3:hover{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+    box-shadow: 0 0 20px #a4a3a3;
+}
+a.tab3.active{
+    background-color:rgba(255, 255, 255, 0.799);
+    color: black;
+}

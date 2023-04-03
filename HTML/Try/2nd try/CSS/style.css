@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 1280px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 30px 0px 20px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: white;
+  background-color: #ffffff20;
+  border-bottom-right-radius: 20px;
+  width: 230px;
+  padding-left: 10px;
+  height: 30px;
+}
+
+header nav {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+header nav a {
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0px 12px;
+  padding: 0px 8px 5px;
+  position: relative;
+}
+
+header nav a:before {
+  content: "";
+  border-bottom: 2px solid #fff;
+
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 110%;
+  transition: 0.3s right;
+}
+
+header nav a:hover:before {
+  right: 0%;
+}
+
+@keyframes slide {
+  10% {
+    opacity: 0;
+    transform: translateY(-100px) translate(-50%, -50%) rotate(-30deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) translate(-50%, -50%) rotate(-30deg);
+  }
+}
+
+.hamb {
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 39px;
+  right: 65px;
+  z-index: 6;
+}
+
+.hamb span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.hamb span.mid {
+  margin: 7px 0;
+}
