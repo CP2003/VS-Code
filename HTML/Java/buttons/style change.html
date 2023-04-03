@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change text</title>
+  <style>
+    body{
+      background: #303131;
+    }
+    button{
+      position: absolute;
+      width: 120px;
+      height: 30px;
+      background-color: white;
+      border-radius: 14px;
+      top: 280px;
+      margin-left: 50px;
+    }
+    button:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+    }
+    #btn1{
+      left: 30px;
+    }
+    #btn2{
+      left: 160px;
+    }
+    #btn3{
+      left: 290px;
+    }
+    #text{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <p id="text"> Hello world </p>
+  <button id="btn1">Change Colour</button>
+  <button id="btn2">Change Size</button>
+  <button id="btn3">Hide Text</button>
+  <script>
+    document.getElementById("btn1") . onclick = function() {
+      document.getElementById("text") .style.color = "red";
+     }
+     document.getElementById("btn2") . onclick = function() {
+      document.getElementById("text") .style.fontSize = "50px";
+     }
+     document.getElementById("btn3") . onclick = function() {
+      document.getElementById("text") .style.display = "none";
+     }
+  </script>
+</body>
+</html>

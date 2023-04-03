@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>username</title>
+  <style>
+      body{
+      background: #303131;
+      }
+      button{
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      border-radius: 14px;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    button:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+    }
+    p{
+      color: white;
+      margin-top: 100px;
+      margin-left: 100px;
+      font-size: 30px;
+    }
+    #textin{
+      position: absolute;
+      top: 150px;
+      left: 150px;
+      border-radius: 10px;
+      height: 25px;
+    }
+    #btn{
+      position: absolute;
+      top: 140px;
+      left: 130px;
+    }
+  </style>
+</head>
+<body>
+  <p>Enter Your User name</p>
+  <p><input type="text" id="textin"></p>
+  <p><button id="btn">Submit</button></p>
+
+
+
+  <script>
+     document.getElementById("btn").onclick = function () {
+      var userNameEntered = document.getElementById("textin").value;
+      var username = ("pamod", "poorwa");
+
+      if (username==userNameEntered) {
+        alert("You are in");
+      }
+      else{
+        alert("User name is incorrect")
+      }
+     }
+  </script>
+</body>
+</html>

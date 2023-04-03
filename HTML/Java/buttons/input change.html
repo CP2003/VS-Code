@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>change from input</title>
+  <style>
+      body{
+      background: #303131;
+      }
+      button{
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      border-radius: 14px;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    button:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+    }
+    p{
+      color: white;
+      margin-top: 100px;
+      margin-left: 100px;
+      font-size: 30px;
+    }
+    #textin{
+      border-radius: 10px;
+      height: 25px;
+    }
+  </style>
+</head>
+<body>
+  <input type = "text" id = "textin">
+  <button id = "btn"> Change</button>
+  <p id="textout"> There is a Text</p>
+
+  <script>
+    document.getElementById("btn").onclick = function() {
+      var textEntered = "" 
+      var Hello = "Hellow"
+      var space = " "
+      textEntered = document.getElementById("textin").value;
+      document.getElementById("textout").innerHTML = Hello + space + textEntered;
+    }
+  </script>
+</body>
+</html>

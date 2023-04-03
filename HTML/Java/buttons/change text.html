@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change text</title>
+  <style>
+    body{
+      background: #303131;
+    }
+    button{
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      border-radius: 14px;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    button:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+    }
+    #text{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <p id="text"> Text 01</p>
+  <button id="btn">change text</button>
+
+  <script>
+    document.getElementById("btn") . onclick = function() {
+      document.getElementById("text") . innerHTML = "Text 02";
+    }
+  </script>
+</body>
+</html>

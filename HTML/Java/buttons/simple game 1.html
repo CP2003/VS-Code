@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>simple game</title>
+  <style>
+    body{
+      background: #303131;
+    }
+      button{
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      border-radius: 14px;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    button:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+    }
+    p{
+      position: absolute;
+      color: white;
+      top: 100px;
+      margin-left: 100px;
+      font-size: 30px;
+    }
+    #p1{
+     top:100px
+    }
+    #p2{
+      top: 140px;
+      left: 60px;
+    }
+    #textin{
+      position: absolute;
+      top: 100px;
+      left: 110px;
+      border-radius: 10px;
+      height: 25px;
+    }
+    #btn{
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <p id="p1">What number is I am thinking now?</p>
+  <p id="p2"> hint - number between 1-10</p>
+  <p><input type="number" id="textin"></p>
+  <p><button id="btn">Gess</button></p>
+
+  <script>
+    var number = Math.floor(Math.random() * 11);
+    // alert (number);
+
+    document.getElementById("btn") . onclick = function() {
+      if (document.getElementById("textin").value == number) {
+        alert ("You are Nice !");
+      }
+      else{
+        alert ("No , I'm thinking " + number);
+      }
+    }
+     
+  </script>
+</body>
+</html>

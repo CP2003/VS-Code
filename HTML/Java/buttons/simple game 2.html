@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>simple game 2</title>
+  <style>
+     body{
+      background: #303131;
+    }
+      button{
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      border-radius: 14px;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+    button:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+      
+    }
+    p{
+      position: absolute;
+      color: white;
+      top: 100px;
+      margin-left: 100px;
+      font-size: 30px;
+    }
+    #p1{
+      left: 40px;
+    }
+    #textin{
+      position: absolute;
+      top: 100px;
+      left: 110px;
+      border-radius: 10px;
+      height: 25px;
+      text-align: center;
+    }
+    #btn{
+      position: absolute;
+      top: 100px;
+      left: 300px;
+      
+    }
+    .btn{
+      position: relative;
+      top: 230px;
+      left: 210px;
+      width: 56px;
+      height: 56px;
+      border-radius: 24px;
+    }
+    .btn:hover{ 
+      background-color: aquamarine;
+      box-shadow: 0 0 6px #000000;
+    }
+  </style>
+</head>
+<body>
+  <p id="p1"> which number is in my mind?</p>
+ 
+  <p><input type="number" name="answer" id="textin" value=""></p>
+  <p><button id="btn">Gess</button></p>
+  
+		 
+		<br>
+		</br>
+		
+		 <input type="button" class="btn" id="button7" value="7"> 
+		 <input type="button" class="btn" id="button8" value="8"> 
+		 <input type="button" class="btn" id="button9" value="9"> 
+		 
+		 <br>
+		 </br>
+		 
+		 <input type="button" class="btn" id="button4" value="4"> 
+		 <input type="button" class="btn" id="button5" value="5"> 
+		 <input type="button" class="btn" id="button6" value="6"> 
+		 
+		 <br>
+		 </br>
+		 
+		 <input type="button" class="btn" id="button1" value="1"> 
+		 <input type="button" class="btn" id="button2" value="2"> 
+		 <input type="button" class="btn" id="button3" value="3"> 
+		 
+		 <br>
+		 </br>
+		 
+    
+		
+
+  <script>
+    document.getElementById("button1").onclick = function () {
+      document.getElementById("textin").value = "1" ;
+    }
+    document.getElementById("button2").onclick = function () {
+      document.getElementById("textin").value = "2" ;
+    }
+    document.getElementById("button3").onclick = function () {
+      document.getElementById("textin").value = "3" ;
+    }
+    document.getElementById("button4").onclick = function () {
+      document.getElementById("textin").value = "4" ;
+    }
+    document.getElementById("button5").onclick = function () {
+      document.getElementById("textin").value = "5" ;
+    }
+    document.getElementById("button6").onclick = function () {
+      document.getElementById("textin").value = "6" ;
+    }
+    document.getElementById("button7").onclick = function () {
+      document.getElementById("textin").value = "7" ;
+    }
+    document.getElementById("button8").onclick = function () {
+      document.getElementById("textin").value = "8" ;
+    }
+    document.getElementById("button9").onclick = function () {
+      document.getElementById("textin").value = "9" ;
+    }
+
+
+    document.getElementById("btn").onclick = function () {
+      var number = document.getElementById("textin").value;
+      var startnum = 1;
+      var gotit = false;
+      
+      if(number >= 10) {
+               alert("Your number must been one character")
+               document.getElementById("textin").value = "" ;
+            }
+         
+          
+
+            else while (gotit == false){
+        var guess = Math.floor(Math.random() *10);
+
+
+        if ( guess == number) {
+          gotit = true ;
+          document.getElementById("p1") . innerHTML = ("Got it! . Your number is " + guess + " . I tried it " + startnum)
+          document.getElementById("p1").style.color = "#6a8dee"
+        } 
+        else{startnum++;}
+      }
+
+    }
+  </script>
+</body>
+</html>
